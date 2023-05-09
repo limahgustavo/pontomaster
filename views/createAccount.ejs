@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('parts/bootstrapcss.ejs') -%>
+        <title>CRIE SUA CONTA</title>
+</head>
+
+<body>
+
+    <div class="container" style="max-width: 700px;">
+        <div class="p-3">
+            <div class="p-2 bg-dark" style="border-radius: 10px;">
+                <h1 class="d-flex justify-content-center mt-2" style="color: white; font-family: Arial, Helvetica, sans-serif;">CRIE SUA
+                    CONTA</h1>
+                <p class="d-flex justify-content-center"
+                    style="margin-top: 7dvh; color: white; font-family: monospace;">
+                    TODAS AS CONTAS PASSARAM POR APROVAÇÃO
+                </p>
+            </div>
+        </div>
+
+        <div class="container" style="max-width: 600px;">
+            <form id="form_cadastro" method="POST" action="/registration">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Endereço de Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email"
+                        name="email" required>
+                    <div id="emailhelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.
+                    </div>
+                </div>
+                <div class="mb-3">
+
+                    <label class="mt-1" for="nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" required>
+
+                    <label for="senha" class="mt-1">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+
+                    <label for="senha" class="mt-1">Confirme sua senha</label>
+                    <input type="password" class="form-control" id="confirmar_senha" name="confirme_senha"
+                        placeholder="Confirme sua senha" required>
+                </div>
+                <div class="mb-3 d-flex justify-content-center">
+                    <a href="/login">voltar</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('parts/bootstrapjss.ejs') -%>
+    <script src="/public/javascript/createaccount.js"></script>
+</body>
+
+</html>

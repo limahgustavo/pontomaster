@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('parts/bootstrapcss.ejs') -%>
+        <title>LOGIN</title>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 20dvh;">
+        <div class="p-3">
+            <div class="row">
+                <div class="col-6 bg-dark" style="border-radius: 10px;">
+                    <h1 class="d-flex justify-content-center" style="margin-top: 11dvh; color: white; font-family: Arial, Helvetica, sans-serif;">CONTROL POINT
+                    </h1>
+                </div>
+                <div class="col-6">
+                    <form id="form_login" method="POST" action="/loginauthetication">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Endereço de Email</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                            <div id="emailhelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" name="password">
+                        </div>
+                        <div class="mb-3 d-flex justify-content-center">
+                            <a href="/createaccount">click aqui pra criar sua conta</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('parts/bootstrapjss.ejs') -%>
+    <script src="../public/javascript/login.js"></script>
+</body>
+
+</html>
