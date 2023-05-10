@@ -24,11 +24,12 @@ const createSession = (data) => {
                             msg: "LOGIN EFETUADO COM SUCESSO",
                             name: result[0].name,
                             lv_access: result[0].lv_access,
+                            active: result[0].active
                         })
                     } else {
                         reject({
                             success: false,
-                            msg: "EMAIL OU SENHA INVALIDO"
+                            msg: "CREDENCIAIS INVALIDAS OU USUARIO NÃO AUTORIZADO"
                         })
                     }
                 } else {
@@ -54,6 +55,7 @@ const loginauthetication = async (req, res) => {
             req.session.email = req.body.email
             req.session.name = result.name
             req.session.lv_access = result.lv_access
+            req.session.active = result.active
             res.json(result)
         }
     } catch (err) {
